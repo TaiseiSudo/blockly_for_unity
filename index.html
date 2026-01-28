@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unity Blockly (C# codegen)</title>
+  <style>
+    :root { --panel-w: 440px; }
+    html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif; }
+    .app { height: 100%; display: grid; grid-template-columns: 1fr var(--panel-w); }
+    #blocklyDiv { height: 100%; width: 100%; }
+    .side { height: 100%; overflow: auto; border-left: 1px solid #ddd; }
+    .toolbar { padding: 10px 12px; display: grid; gap: 10px; border-bottom: 1px solid #eee; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: end; }
+    .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; align-items: end; }
+    label { font-size: 12px; color: #444; display: grid; gap: 4px; }
+    input[type="text"], select, textarea { width: 100%; box-sizing: border-box; padding: 6px 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; }
+    button { padding: 7px 10px; border: 1px solid #bbb; background: #fff; border-radius: 6px; cursor: pointer; font-size: 13px; }
+    button:hover { background: #f6f6f6; }
+    .code { padding: 10px 12px; overflow: visible; }
+    pre { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 12px; line-height: 1.35; overflow-x: auto; }
+    .footer { padding: 10px 12px; border-top: 1px solid #eee; display: grid; gap: 8px; }
+    .small { font-size: 11px; color: #666; }
+    .args { display: grid; gap: 6px; }
+    .argRow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .hr { height: 1px; background: #eee; margin: 6px 0; }
+  </style>
+
+  <!-- Blockly 12.3.1 -->
+  <script src="https://unpkg.com/blockly@12.3.1/blockly.min.js"></script>
+  <!-- Japanese messages (script-tag context auto plugs into Blockly.Msg) -->
+  <script src="https://unpkg.com/blockly@12.3.1/msg/ja.js"></script>
+</head>
+<body>
+  <div class="app">
+    <div id="blocklyDiv"></div>
+
+    <div class="side">
+      <div class="toolbar">
+        <div class="row">
+          <label>クラス名
+            <input id="className" type="text" value="MyScript" />
+          </label>
+          <label>コード生成
+            <button id="btnRegen">再生成</button>
+          </label>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="row">
+          <label>変数名
+            <input id="varName" type="text" placeholder="例: speed" />
+          </label>
+          <label>型
+            <select id="varType"></select>
+          </label>
+        </div>
+        <div class="row3">
+          <button id="btnAddVar">変数を作成</button>
+          <button id="btnDelVar">変数を削除</button>
+          <select id="varPick"></select>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="row">
+          <label>関数名
+            <input id="procName" type="text" placeholder="例: PrintMessage" />
+          </label>
+          <label>戻り値
+            <select id="procRet"></select>
+          </label>
+        </div>
+        <div class="row">
+          <label>引数の数 (0〜6)
+            <select id="procArgCount"></select>
+          </label>
+          <label>　
+            <button id="btnAddProc">関数を作成</button>
+          </label>
+        </div>
+        <div class="args" id="procArgs"></div>
+        <div class="row3">
+          <button id="btnDelProc">関数を削除</button>
+          <select id="procPick"></select>
+          <button id="btnFocusProc">定義へ移動</button>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="row">
+          <button id="btnSave">JSON保存</button>
+          <button id="btnLoad">JSON読込</button>
+        </div>
+        <div class="small">※ 保存/読込はクリップボードではなく、下のテキスト領域を使います。</div>
+      </div>
+
+      <div class="code">
+        <pre id="codeOut"></pre>
+      </div>
+
+      <div class="footer">
+        <label>State JSON
+          <textarea id="stateJson" rows="6" spellcheck="false"></textarea>
+        </label>
+        <div class="small">
+          - Blockly上で実行はしません（C#生成のみ）<br/>
+          - イベント/関数に接続されていないブロックは生成対象外です
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
