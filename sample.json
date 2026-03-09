@@ -56,50 +56,6 @@
                     }
                   }
                 }
-              },
-              "next": {
-                "block": {
-                  "type": "var_set",
-                  "id": "b_ULWHMsg1",
-                  "fields": {
-                    "VAR": {
-                      "id": "var_ZkSBvrjn"
-                    }
-                  },
-                  "inputs": {
-                    "VALUE": {
-                      "block": {
-                        "type": "const_float",
-                        "id": "b_WSlmnVEr",
-                        "fields": {
-                          "N": 5
-                        }
-                      }
-                    }
-                  },
-                  "next": {
-                    "block": {
-                      "type": "var_set",
-                      "id": "b_IircdJsS",
-                      "fields": {
-                        "VAR": {
-                          "id": "var_9Wvgfygw"
-                        }
-                      },
-                      "inputs": {
-                        "VALUE": {
-                          "block": {
-                            "type": "const_float",
-                            "id": "b_msoxltaT",
-                            "fields": {
-                              "N": 5
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
               }
             }
           }
@@ -388,7 +344,7 @@
                                         "S": {
                                           "block": {
                                             "type": "arith_float",
-                                            "id": "b_VLB5Lzxo",
+                                            "id": "yW^7%RCu5|}pHC?#hR^c",
                                             "fields": {
                                               "OP": "*"
                                             },
@@ -396,7 +352,7 @@
                                               "A": {
                                                 "block": {
                                                   "type": "var_get",
-                                                  "id": "b_nPFz46PD",
+                                                  "id": "}0e%v1bF-:`cbTA|[|,r",
                                                   "fields": {
                                                     "VAR": {
                                                       "id": "var_ZkSBvrjn"
@@ -407,7 +363,7 @@
                                               "B": {
                                                 "block": {
                                                   "type": "time_deltaTime",
-                                                  "id": "b_jqipVJIq"
+                                                  "id": ":J[I^Mls0*E9Q`G0qi]b"
                                                 }
                                               }
                                             }
@@ -521,7 +477,7 @@
                                             "S": {
                                               "block": {
                                                 "type": "arith_float",
-                                                "id": "b_VLB5Lzxo",
+                                                "id": "r:J:~!r2|9|mfcb@!tm|",
                                                 "fields": {
                                                   "OP": "*"
                                                 },
@@ -529,7 +485,7 @@
                                                   "A": {
                                                     "block": {
                                                       "type": "var_get",
-                                                      "id": "b_nPFz46PD",
+                                                      "id": "B68oDmUJj[O:khUe7E6g",
                                                       "fields": {
                                                         "VAR": {
                                                           "id": "var_ZkSBvrjn"
@@ -540,7 +496,7 @@
                                                   "B": {
                                                     "block": {
                                                       "type": "time_deltaTime",
-                                                      "id": "b_jqipVJIq"
+                                                      "id": "`R3AbhysEg)eS9HOd=O*"
                                                     }
                                                   }
                                                 }
@@ -671,7 +627,7 @@
                                                 "S": {
                                                   "block": {
                                                     "type": "arith_float",
-                                                    "id": "b_VLB5Lzxo",
+                                                    "id": "WbVTjrX2-xll1;GIl=vo",
                                                     "fields": {
                                                       "OP": "*"
                                                     },
@@ -679,7 +635,7 @@
                                                       "A": {
                                                         "block": {
                                                           "type": "var_get",
-                                                          "id": "b_nPFz46PD",
+                                                          "id": "8#BkG^w:eGQy5%yB|WN$",
                                                           "fields": {
                                                             "VAR": {
                                                               "id": "var_ZkSBvrjn"
@@ -690,7 +646,7 @@
                                                       "B": {
                                                         "block": {
                                                           "type": "time_deltaTime",
-                                                          "id": "b_jqipVJIq"
+                                                          "id": "WTA~wspNl`jOow-u0fS7"
                                                         }
                                                       }
                                                     }
@@ -985,19 +941,11 @@
                             "inputs": {
                               "TR": {
                                 "block": {
-                                  "type": "go_get_transform",
-                                  "id": "b_mjbcpEN2",
-                                  "inputs": {
-                                    "GO": {
-                                      "block": {
-                                        "type": "var_get",
-                                        "id": "b_08WpRtoZ",
-                                        "fields": {
-                                          "VAR": {
-                                            "id": "var_BcbfnoGM"
-                                          }
-                                        }
-                                      }
+                                  "type": "var_get",
+                                  "id": "b_08WpRtoZ",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "0{m:Z;4=c$j$E@#)^qI_"
                                     }
                                   }
                                 }
@@ -1007,8 +955,21 @@
                         },
                         "ROT": {
                           "block": {
-                            "type": "quat_identity",
-                            "id": "b_TSyFzpjP"
+                            "type": "tr_rot",
+                            "id": "#f(!JF#t$7AXYVf%yV=?",
+                            "inputs": {
+                              "TR": {
+                                "block": {
+                                  "type": "var_get",
+                                  "id": "P7{4q=ZoJ+LS+RT.oy_T",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "0{m:Z;4=c$j$E@#)^qI_"
+                                    }
+                                  }
+                                }
+                              }
+                            }
                           }
                         }
                       },
@@ -1089,7 +1050,7 @@
                                           "type": "const_float",
                                           "id": "b_V3ECqWp1",
                                           "fields": {
-                                            "N": 100
+                                            "N": 50
                                           }
                                         }
                                       }
@@ -1233,6 +1194,13 @@
                                 "id": "b_bNjpiEQh",
                                 "inputs": {
                                   "X": {
+                                    "shadow": {
+                                      "type": "const_float",
+                                      "id": "WhOG60C~!_SkIR9(XrVn",
+                                      "fields": {
+                                        "N": 0
+                                      }
+                                    },
                                     "block": {
                                       "type": "const_float",
                                       "id": "b_Aq1fEbVI",
@@ -1242,6 +1210,13 @@
                                     }
                                   },
                                   "Y": {
+                                    "shadow": {
+                                      "type": "const_float",
+                                      "id": "[)S`8DL;{;5%J#fA7qxm",
+                                      "fields": {
+                                        "N": 0
+                                      }
+                                    },
                                     "block": {
                                       "type": "var_get",
                                       "id": "b_d8woPeX9",
@@ -1253,6 +1228,13 @@
                                     }
                                   },
                                   "Z": {
+                                    "shadow": {
+                                      "type": "const_float",
+                                      "id": "Y%DVZ~Hj3D6%=Ah?;v7?",
+                                      "fields": {
+                                        "N": 0
+                                      }
+                                    },
                                     "block": {
                                       "type": "const_float",
                                       "id": "b_PcWb8pm1",
@@ -1406,6 +1388,13 @@
                                       "id": "b_pUAFJWpS",
                                       "inputs": {
                                         "X": {
+                                          "shadow": {
+                                            "type": "const_float",
+                                            "id": "u|hU+^,`zPf=]R(Q@G^T",
+                                            "fields": {
+                                              "N": 0
+                                            }
+                                          },
                                           "block": {
                                             "type": "var_get",
                                             "id": "b_vbF2ulFn",
@@ -1417,6 +1406,13 @@
                                           }
                                         },
                                         "Y": {
+                                          "shadow": {
+                                            "type": "const_float",
+                                            "id": "S|$*2zf(liZ]p~F|^@#Q",
+                                            "fields": {
+                                              "N": 0
+                                            }
+                                          },
                                           "block": {
                                             "type": "const_float",
                                             "id": "b_wZqvr4MS",
@@ -1426,6 +1422,13 @@
                                           }
                                         },
                                         "Z": {
+                                          "shadow": {
+                                            "type": "const_float",
+                                            "id": "@33mfO2=e}B+7|IA1K~S",
+                                            "fields": {
+                                              "N": 0
+                                            }
+                                          },
                                           "block": {
                                             "type": "const_float",
                                             "id": "b_4rJaH8mf",
@@ -1489,11 +1492,6 @@
         "type": "float"
       },
       {
-        "name": "isGround",
-        "id": "var_2wMqZcUD",
-        "type": "bool"
-      },
-      {
         "name": "mouseSensitivity",
         "id": "var_Ih7yfJs1",
         "type": "float"
@@ -1509,11 +1507,6 @@
         "type": "float"
       },
       {
-        "name": "cameraPitchPivot",
-        "id": "var_o3gyrDO1",
-        "type": "Transform"
-      },
-      {
         "name": "pitch",
         "id": "var_xkxwnQrS",
         "type": "float"
@@ -1522,6 +1515,21 @@
         "name": "yaw",
         "id": "var_7RPeMOkI",
         "type": "float"
+      },
+      {
+        "name": "isGround",
+        "id": "var_2wMqZcUD",
+        "type": "bool"
+      },
+      {
+        "name": "cameraPitchPivot",
+        "id": "var_o3gyrDO1",
+        "type": "Transform"
+      },
+      {
+        "name": "muzzle",
+        "id": "0{m:Z;4=c$j$E@#)^qI_",
+        "type": "Transform"
       }
     ]
   }
