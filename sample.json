@@ -1,0 +1,1528 @@
+{
+  "version": 1,
+  "className": "PlayerMove",
+  "procedures": [
+    {
+      "id": "proc_UpkDyr7O",
+      "name": "Move",
+      "returnType": "void",
+      "args": []
+    },
+    {
+      "id": "proc_SJoRu1XX",
+      "name": "Jump",
+      "returnType": "void",
+      "args": []
+    },
+    {
+      "id": "proc_do0cZuzr",
+      "name": "Shot",
+      "returnType": "void",
+      "args": []
+    },
+    {
+      "id": "proc_en68K4Tu",
+      "name": "CameraMove",
+      "returnType": "void",
+      "args": []
+    }
+  ],
+  "workspace": {
+    "blocks": {
+      "languageVersion": 0,
+      "blocks": [
+        {
+          "type": "evt_start",
+          "id": "b_8iO3WFg3",
+          "x": 150,
+          "y": 30,
+          "next": {
+            "block": {
+              "type": "go_getcomponent",
+              "id": "b_hUmuhVI8",
+              "fields": {
+                "OUTN": "rb",
+                "CT": "Rigidbody"
+              },
+              "inputs": {
+                "GO": {
+                  "block": {
+                    "type": "var_get",
+                    "id": "b_vwSDrtqo",
+                    "fields": {
+                      "VAR": {
+                        "id": "var_BcbfnoGM"
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "var_set",
+                  "id": "b_ULWHMsg1",
+                  "fields": {
+                    "VAR": {
+                      "id": "var_ZkSBvrjn"
+                    }
+                  },
+                  "inputs": {
+                    "VALUE": {
+                      "block": {
+                        "type": "const_float",
+                        "id": "b_WSlmnVEr",
+                        "fields": {
+                          "N": 5
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "var_set",
+                      "id": "b_IircdJsS",
+                      "fields": {
+                        "VAR": {
+                          "id": "var_9Wvgfygw"
+                        }
+                      },
+                      "inputs": {
+                        "VALUE": {
+                          "block": {
+                            "type": "const_float",
+                            "id": "b_msoxltaT",
+                            "fields": {
+                              "N": 5
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "evt_update",
+          "id": "b_hJWAMMYN",
+          "x": 150,
+          "y": 210,
+          "next": {
+            "block": {
+              "type": "proc_call_stmt_proc_UpkDyr7O",
+              "id": "b_aKsEECvl",
+              "next": {
+                "block": {
+                  "type": "proc_call_stmt_proc_SJoRu1XX",
+                  "id": "b_9dq83Eh0",
+                  "next": {
+                    "block": {
+                      "type": "proc_call_stmt_proc_do0cZuzr",
+                      "id": "b_ezFeKORd",
+                      "next": {
+                        "block": {
+                          "type": "proc_call_stmt_proc_en68K4Tu",
+                          "id": "b_jjZK8tfp"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "proc_def_proc_UpkDyr7O",
+          "id": "b_xLJjBict",
+          "x": 150,
+          "y": 350,
+          "inputs": {
+            "DO": {
+              "block": {
+                "type": "ctrl_if",
+                "id": "b_K8ffUF0e",
+                "inputs": {
+                  "COND": {
+                    "block": {
+                      "type": "input_getkey",
+                      "id": "b_WkI9X7H6",
+                      "fields": {
+                        "KEY": "W",
+                        "MODE": "stay"
+                      }
+                    }
+                  },
+                  "DO": {
+                    "block": {
+                      "type": "rb_movepos",
+                      "id": "b_41Ztpdp4",
+                      "inputs": {
+                        "RB": {
+                          "block": {
+                            "type": "var_get",
+                            "id": "b_aMuFbh7x",
+                            "fields": {
+                              "VAR": {
+                                "id": "var_OhbVrpoi"
+                              }
+                            }
+                          }
+                        },
+                        "P": {
+                          "block": {
+                            "type": "vec3_add",
+                            "id": "b_t1OGMmjx",
+                            "inputs": {
+                              "A": {
+                                "block": {
+                                  "type": "tr_pos",
+                                  "id": "b_kDa9U4Uq",
+                                  "inputs": {
+                                    "TR": {
+                                      "block": {
+                                        "type": "go_get_transform",
+                                        "id": "b_WrXPvhsB",
+                                        "inputs": {
+                                          "GO": {
+                                            "block": {
+                                              "type": "var_get",
+                                              "id": "b_8aRUhR4I",
+                                              "fields": {
+                                                "VAR": {
+                                                  "id": "var_BcbfnoGM"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "B": {
+                                "block": {
+                                  "type": "vec3_mul",
+                                  "id": "b_GWlG6g3O",
+                                  "inputs": {
+                                    "V": {
+                                      "block": {
+                                        "type": "tr_forward",
+                                        "id": "b_yyMDHqJ3",
+                                        "inputs": {
+                                          "TR": {
+                                            "block": {
+                                              "type": "go_get_transform",
+                                              "id": "b_jOkYRBMe",
+                                              "inputs": {
+                                                "GO": {
+                                                  "block": {
+                                                    "type": "var_get",
+                                                    "id": "b_iGFfWd3h",
+                                                    "fields": {
+                                                      "VAR": {
+                                                        "id": "var_BcbfnoGM"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "S": {
+                                      "block": {
+                                        "type": "arith_float",
+                                        "id": "b_VLB5Lzxo",
+                                        "fields": {
+                                          "OP": "*"
+                                        },
+                                        "inputs": {
+                                          "A": {
+                                            "block": {
+                                              "type": "var_get",
+                                              "id": "b_nPFz46PD",
+                                              "fields": {
+                                                "VAR": {
+                                                  "id": "var_ZkSBvrjn"
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "B": {
+                                            "block": {
+                                              "type": "time_deltaTime",
+                                              "id": "b_jqipVJIq"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "next": {
+                  "block": {
+                    "type": "ctrl_if",
+                    "id": "b_BlrDp37e",
+                    "inputs": {
+                      "COND": {
+                        "block": {
+                          "type": "input_getkey",
+                          "id": "b_wBAD3UdR",
+                          "fields": {
+                            "KEY": "S",
+                            "MODE": "stay"
+                          }
+                        }
+                      },
+                      "DO": {
+                        "block": {
+                          "type": "rb_movepos",
+                          "id": "b_3gpmmICi",
+                          "inputs": {
+                            "RB": {
+                              "block": {
+                                "type": "var_get",
+                                "id": "b_PPgdzUvZ",
+                                "fields": {
+                                  "VAR": {
+                                    "id": "var_OhbVrpoi"
+                                  }
+                                }
+                              }
+                            },
+                            "P": {
+                              "block": {
+                                "type": "vec3_add",
+                                "id": "b_EZAmggQB",
+                                "inputs": {
+                                  "A": {
+                                    "block": {
+                                      "type": "tr_pos",
+                                      "id": "b_GprQFnIi",
+                                      "inputs": {
+                                        "TR": {
+                                          "block": {
+                                            "type": "go_get_transform",
+                                            "id": "b_doe5c3ve",
+                                            "inputs": {
+                                              "GO": {
+                                                "block": {
+                                                  "type": "var_get",
+                                                  "id": "b_JoLoaeTO",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "var_BcbfnoGM"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "B": {
+                                    "block": {
+                                      "type": "vec3_mul",
+                                      "id": "b_U74KKEpY",
+                                      "inputs": {
+                                        "V": {
+                                          "block": {
+                                            "type": "vec3_mul",
+                                            "id": "b_ChpoevbL",
+                                            "inputs": {
+                                              "V": {
+                                                "block": {
+                                                  "type": "tr_forward",
+                                                  "id": "b_n7IWUSmT",
+                                                  "inputs": {
+                                                    "TR": {
+                                                      "block": {
+                                                        "type": "go_get_transform",
+                                                        "id": "b_JkqH3MB9",
+                                                        "inputs": {
+                                                          "GO": {
+                                                            "block": {
+                                                              "type": "var_get",
+                                                              "id": "b_WIXiiQE8",
+                                                              "fields": {
+                                                                "VAR": {
+                                                                  "id": "var_BcbfnoGM"
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "S": {
+                                                "block": {
+                                                  "type": "const_float",
+                                                  "id": "b_tzQPxC5H",
+                                                  "fields": {
+                                                    "N": -1
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "S": {
+                                          "block": {
+                                            "type": "arith_float",
+                                            "id": "b_VLB5Lzxo",
+                                            "fields": {
+                                              "OP": "*"
+                                            },
+                                            "inputs": {
+                                              "A": {
+                                                "block": {
+                                                  "type": "var_get",
+                                                  "id": "b_nPFz46PD",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "var_ZkSBvrjn"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "B": {
+                                                "block": {
+                                                  "type": "time_deltaTime",
+                                                  "id": "b_jqipVJIq"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "ctrl_if",
+                        "id": "b_AQLKHu7q",
+                        "inputs": {
+                          "COND": {
+                            "block": {
+                              "type": "input_getkey",
+                              "id": "b_kd9Gf2le",
+                              "fields": {
+                                "KEY": "D",
+                                "MODE": "stay"
+                              }
+                            }
+                          },
+                          "DO": {
+                            "block": {
+                              "type": "rb_movepos",
+                              "id": "b_4KpLMcNf",
+                              "inputs": {
+                                "RB": {
+                                  "block": {
+                                    "type": "var_get",
+                                    "id": "b_MeR3pzh8",
+                                    "fields": {
+                                      "VAR": {
+                                        "id": "var_OhbVrpoi"
+                                      }
+                                    }
+                                  }
+                                },
+                                "P": {
+                                  "block": {
+                                    "type": "vec3_add",
+                                    "id": "b_ddLEG62H",
+                                    "inputs": {
+                                      "A": {
+                                        "block": {
+                                          "type": "tr_pos",
+                                          "id": "b_JQTFjmsn",
+                                          "inputs": {
+                                            "TR": {
+                                              "block": {
+                                                "type": "go_get_transform",
+                                                "id": "b_YDsBS9UY",
+                                                "inputs": {
+                                                  "GO": {
+                                                    "block": {
+                                                      "type": "var_get",
+                                                      "id": "b_dkyayq7Y",
+                                                      "fields": {
+                                                        "VAR": {
+                                                          "id": "var_BcbfnoGM"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "B": {
+                                        "block": {
+                                          "type": "vec3_mul",
+                                          "id": "b_9dLVIdVu",
+                                          "inputs": {
+                                            "V": {
+                                              "block": {
+                                                "type": "tr_right",
+                                                "id": "b_kAFEn3z5",
+                                                "inputs": {
+                                                  "TR": {
+                                                    "block": {
+                                                      "type": "go_get_transform",
+                                                      "id": "b_I1af7W2p",
+                                                      "inputs": {
+                                                        "GO": {
+                                                          "block": {
+                                                            "type": "var_get",
+                                                            "id": "b_CZ32JgdP",
+                                                            "fields": {
+                                                              "VAR": {
+                                                                "id": "var_BcbfnoGM"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "S": {
+                                              "block": {
+                                                "type": "arith_float",
+                                                "id": "b_VLB5Lzxo",
+                                                "fields": {
+                                                  "OP": "*"
+                                                },
+                                                "inputs": {
+                                                  "A": {
+                                                    "block": {
+                                                      "type": "var_get",
+                                                      "id": "b_nPFz46PD",
+                                                      "fields": {
+                                                        "VAR": {
+                                                          "id": "var_ZkSBvrjn"
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "B": {
+                                                    "block": {
+                                                      "type": "time_deltaTime",
+                                                      "id": "b_jqipVJIq"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "ctrl_if",
+                            "id": "b_84S5jIc1",
+                            "inputs": {
+                              "COND": {
+                                "block": {
+                                  "type": "input_getkey",
+                                  "id": "b_2dfOB1rc",
+                                  "fields": {
+                                    "KEY": "A",
+                                    "MODE": "stay"
+                                  }
+                                }
+                              },
+                              "DO": {
+                                "block": {
+                                  "type": "rb_movepos",
+                                  "id": "b_CJTBJahe",
+                                  "inputs": {
+                                    "RB": {
+                                      "block": {
+                                        "type": "var_get",
+                                        "id": "b_avXiOqkV",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "var_OhbVrpoi"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "P": {
+                                      "block": {
+                                        "type": "vec3_add",
+                                        "id": "b_O2qGFq56",
+                                        "inputs": {
+                                          "A": {
+                                            "block": {
+                                              "type": "tr_pos",
+                                              "id": "b_iqh4gVJj",
+                                              "inputs": {
+                                                "TR": {
+                                                  "block": {
+                                                    "type": "go_get_transform",
+                                                    "id": "b_0Jt7Qg84",
+                                                    "inputs": {
+                                                      "GO": {
+                                                        "block": {
+                                                          "type": "var_get",
+                                                          "id": "b_TtNZPHaQ",
+                                                          "fields": {
+                                                            "VAR": {
+                                                              "id": "var_BcbfnoGM"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "B": {
+                                            "block": {
+                                              "type": "vec3_mul",
+                                              "id": "b_rsMnTvnR",
+                                              "inputs": {
+                                                "V": {
+                                                  "block": {
+                                                    "type": "vec3_mul",
+                                                    "id": "b_4pxskC1I",
+                                                    "inputs": {
+                                                      "V": {
+                                                        "block": {
+                                                          "type": "tr_right",
+                                                          "id": "b_eaDNKgeI",
+                                                          "inputs": {
+                                                            "TR": {
+                                                              "block": {
+                                                                "type": "go_get_transform",
+                                                                "id": "b_QPtDu7W7",
+                                                                "inputs": {
+                                                                  "GO": {
+                                                                    "block": {
+                                                                      "type": "var_get",
+                                                                      "id": "b_nQTupqzi",
+                                                                      "fields": {
+                                                                        "VAR": {
+                                                                          "id": "var_BcbfnoGM"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "S": {
+                                                        "block": {
+                                                          "type": "const_float",
+                                                          "id": "b_nGqi7w4e",
+                                                          "fields": {
+                                                            "N": -1
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "S": {
+                                                  "block": {
+                                                    "type": "arith_float",
+                                                    "id": "b_VLB5Lzxo",
+                                                    "fields": {
+                                                      "OP": "*"
+                                                    },
+                                                    "inputs": {
+                                                      "A": {
+                                                        "block": {
+                                                          "type": "var_get",
+                                                          "id": "b_nPFz46PD",
+                                                          "fields": {
+                                                            "VAR": {
+                                                              "id": "var_ZkSBvrjn"
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "B": {
+                                                        "block": {
+                                                          "type": "time_deltaTime",
+                                                          "id": "b_jqipVJIq"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "proc_def_proc_SJoRu1XX",
+          "id": "b_EY59YVkQ",
+          "x": 150,
+          "y": 950,
+          "inputs": {
+            "DO": {
+              "block": {
+                "type": "ctrl_if",
+                "id": "b_PuDCCRnG",
+                "inputs": {
+                  "COND": {
+                    "block": {
+                      "type": "input_getkey",
+                      "id": "b_atsnBYLM",
+                      "fields": {
+                        "KEY": "Space",
+                        "MODE": "down"
+                      }
+                    }
+                  },
+                  "DO": {
+                    "block": {
+                      "type": "physics_raycast",
+                      "id": "b_vr3e9Xrw",
+                      "fields": {
+                        "OUTN": "isGround",
+                        "HITN": ""
+                      },
+                      "inputs": {
+                        "O": {
+                          "block": {
+                            "type": "tr_pos",
+                            "id": "b_43ANVj77",
+                            "inputs": {
+                              "TR": {
+                                "block": {
+                                  "type": "go_get_transform",
+                                  "id": "b_nRpQgwXJ",
+                                  "inputs": {
+                                    "GO": {
+                                      "block": {
+                                        "type": "var_get",
+                                        "id": "b_x57Y3c5w",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "var_BcbfnoGM"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "D": {
+                          "block": {
+                            "type": "vec3_mul",
+                            "id": "b_om06Dwt0",
+                            "inputs": {
+                              "V": {
+                                "block": {
+                                  "type": "tr_up",
+                                  "id": "b_ZQ3VZprk",
+                                  "inputs": {
+                                    "TR": {
+                                      "block": {
+                                        "type": "go_get_transform",
+                                        "id": "b_blV7vY7A",
+                                        "inputs": {
+                                          "GO": {
+                                            "block": {
+                                              "type": "var_get",
+                                              "id": "b_p3kZZl4A",
+                                              "fields": {
+                                                "VAR": {
+                                                  "id": "var_BcbfnoGM"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "S": {
+                                "block": {
+                                  "type": "const_float",
+                                  "id": "b_YSgy3c2E",
+                                  "fields": {
+                                    "N": -1
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "DIST": {
+                          "block": {
+                            "type": "const_float",
+                            "id": "b_Y3oobQmz",
+                            "fields": {
+                              "N": 5
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "ctrl_if",
+                          "id": "b_5lNKtzJ1",
+                          "inputs": {
+                            "COND": {
+                              "block": {
+                                "type": "var_get",
+                                "id": "b_imAQ8yRV",
+                                "fields": {
+                                  "VAR": {
+                                    "id": "var_2wMqZcUD"
+                                  }
+                                }
+                              }
+                            },
+                            "DO": {
+                              "block": {
+                                "type": "rb_addforce",
+                                "id": "b_tQAuzSsJ",
+                                "fields": {
+                                  "MODE": "Impulse"
+                                },
+                                "inputs": {
+                                  "RB": {
+                                    "block": {
+                                      "type": "var_get",
+                                      "id": "b_uQ2hU5tG",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "var_OhbVrpoi"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "F": {
+                                    "block": {
+                                      "type": "vec3_mul",
+                                      "id": "b_xBe8Q6vN",
+                                      "inputs": {
+                                        "V": {
+                                          "block": {
+                                            "type": "vec3_mul",
+                                            "id": "b_qcTBaH7Z",
+                                            "inputs": {
+                                              "V": {
+                                                "block": {
+                                                  "type": "tr_up",
+                                                  "id": "b_cgMBwUYu",
+                                                  "inputs": {
+                                                    "TR": {
+                                                      "block": {
+                                                        "type": "go_get_transform",
+                                                        "id": "b_bh4qlL9q",
+                                                        "inputs": {
+                                                          "GO": {
+                                                            "block": {
+                                                              "type": "var_get",
+                                                              "id": "b_PGzR1Iv8",
+                                                              "fields": {
+                                                                "VAR": {
+                                                                  "id": "var_BcbfnoGM"
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "S": {
+                                                "block": {
+                                                  "type": "const_float",
+                                                  "id": "b_BMGhy5Km",
+                                                  "fields": {
+                                                    "N": -1
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "S": {
+                                          "block": {
+                                            "type": "var_get",
+                                            "id": "b_IRU8VVQm",
+                                            "fields": {
+                                              "VAR": {
+                                                "id": "var_9Wvgfygw"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "proc_def_proc_do0cZuzr",
+          "id": "b_VVIZM5oF",
+          "x": 150,
+          "y": 1270,
+          "inputs": {
+            "DO": {
+              "block": {
+                "type": "ctrl_if",
+                "id": "b_Wy2591AI",
+                "inputs": {
+                  "COND": {
+                    "block": {
+                      "type": "input_getmouse",
+                      "id": "b_WKyEa8wt",
+                      "fields": {
+                        "BTN": "0",
+                        "MODE": "down"
+                      }
+                    }
+                  },
+                  "DO": {
+                    "block": {
+                      "type": "unity_instantiate",
+                      "id": "b_Sa5W3X4g",
+                      "fields": {
+                        "OUTN": "bullet"
+                      },
+                      "inputs": {
+                        "PREFAB": {
+                          "block": {
+                            "type": "var_get",
+                            "id": "b_fsGQONvf",
+                            "fields": {
+                              "VAR": {
+                                "id": "var_bJmTPSIA"
+                              }
+                            }
+                          }
+                        },
+                        "POS": {
+                          "block": {
+                            "type": "tr_pos",
+                            "id": "b_XeDA4OKm",
+                            "inputs": {
+                              "TR": {
+                                "block": {
+                                  "type": "go_get_transform",
+                                  "id": "b_mjbcpEN2",
+                                  "inputs": {
+                                    "GO": {
+                                      "block": {
+                                        "type": "var_get",
+                                        "id": "b_08WpRtoZ",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "var_BcbfnoGM"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "ROT": {
+                          "block": {
+                            "type": "quat_identity",
+                            "id": "b_TSyFzpjP"
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "go_getcomponent",
+                          "id": "b_DdJp62hD",
+                          "fields": {
+                            "OUTN": "bulletRb",
+                            "CT": "Rigidbody"
+                          },
+                          "inputs": {
+                            "GO": {
+                              "block": {
+                                "type": "var_get",
+                                "id": "b_XBolZ9SH",
+                                "fields": {
+                                  "VAR": {
+                                    "id": "var_oCLrZ3aW"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "rb_addforce",
+                              "id": "b_u5Ifijoy",
+                              "fields": {
+                                "MODE": "Impulse"
+                              },
+                              "inputs": {
+                                "RB": {
+                                  "block": {
+                                    "type": "var_get",
+                                    "id": "b_rCeTsprv",
+                                    "fields": {
+                                      "VAR": {
+                                        "id": "var_VgRV5IfL"
+                                      }
+                                    }
+                                  }
+                                },
+                                "F": {
+                                  "block": {
+                                    "type": "vec3_mul",
+                                    "id": "b_OrXXHFOp",
+                                    "inputs": {
+                                      "V": {
+                                        "block": {
+                                          "type": "tr_forward",
+                                          "id": "b_GB16JC5k",
+                                          "inputs": {
+                                            "TR": {
+                                              "block": {
+                                                "type": "go_get_transform",
+                                                "id": "b_8W5CN0U5",
+                                                "inputs": {
+                                                  "GO": {
+                                                    "block": {
+                                                      "type": "var_get",
+                                                      "id": "b_iZDQHJMu",
+                                                      "fields": {
+                                                        "VAR": {
+                                                          "id": "var_oCLrZ3aW"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "S": {
+                                        "block": {
+                                          "type": "const_float",
+                                          "id": "b_V3ECqWp1",
+                                          "fields": {
+                                            "N": 100
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "unity_destroy",
+                                  "id": "b_5XL8Sb24",
+                                  "inputs": {
+                                    "T": {
+                                      "block": {
+                                        "type": "const_float",
+                                        "id": "b_SjTneAAv",
+                                        "fields": {
+                                          "N": 5
+                                        }
+                                      }
+                                    },
+                                    "O": {
+                                      "block": {
+                                        "type": "var_get",
+                                        "id": "b_IDAdn1Ay",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "var_oCLrZ3aW"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "proc_def_proc_en68K4Tu",
+          "id": "b_xEJHwBVJ",
+          "x": 150,
+          "y": 1600,
+          "inputs": {
+            "DO": {
+              "block": {
+                "type": "var_set",
+                "id": "b_vW4yrW81",
+                "fields": {
+                  "VAR": {
+                    "id": "var_7RPeMOkI"
+                  }
+                },
+                "inputs": {
+                  "VALUE": {
+                    "block": {
+                      "type": "arith_float",
+                      "id": "b_ldqyunDu",
+                      "fields": {
+                        "OP": "+"
+                      },
+                      "inputs": {
+                        "A": {
+                          "block": {
+                            "type": "var_get",
+                            "id": "b_QbfPBi3D",
+                            "fields": {
+                              "VAR": {
+                                "id": "var_7RPeMOkI"
+                              }
+                            }
+                          }
+                        },
+                        "B": {
+                          "block": {
+                            "type": "arith_float",
+                            "id": "b_iNIb6zLK",
+                            "fields": {
+                              "OP": "*"
+                            },
+                            "inputs": {
+                              "A": {
+                                "block": {
+                                  "type": "input_getaxis",
+                                  "id": "b_orBFbyvQ",
+                                  "fields": {
+                                    "AXIS": "Mouse X"
+                                  }
+                                }
+                              },
+                              "B": {
+                                "block": {
+                                  "type": "var_get",
+                                  "id": "b_RZzUk1D6",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "var_Ih7yfJs1"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "next": {
+                  "block": {
+                    "type": "rb_moverot",
+                    "id": "b_0k9tgLb7",
+                    "inputs": {
+                      "RB": {
+                        "block": {
+                          "type": "var_get",
+                          "id": "b_K8nDSqXx",
+                          "fields": {
+                            "VAR": {
+                              "id": "var_OhbVrpoi"
+                            }
+                          }
+                        }
+                      },
+                      "Q": {
+                        "block": {
+                          "type": "quat_euler",
+                          "id": "b_kMM9VThX",
+                          "inputs": {
+                            "E": {
+                              "block": {
+                                "type": "make_vector3",
+                                "id": "b_bNjpiEQh",
+                                "inputs": {
+                                  "X": {
+                                    "block": {
+                                      "type": "const_float",
+                                      "id": "b_Aq1fEbVI",
+                                      "fields": {
+                                        "N": 0
+                                      }
+                                    }
+                                  },
+                                  "Y": {
+                                    "block": {
+                                      "type": "var_get",
+                                      "id": "b_d8woPeX9",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "var_7RPeMOkI"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "Z": {
+                                    "block": {
+                                      "type": "const_float",
+                                      "id": "b_PcWb8pm1",
+                                      "fields": {
+                                        "N": 0
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "var_set",
+                        "id": "b_A0FgB9xO",
+                        "fields": {
+                          "VAR": {
+                            "id": "var_xkxwnQrS"
+                          }
+                        },
+                        "inputs": {
+                          "VALUE": {
+                            "block": {
+                              "type": "arith_float",
+                              "id": "b_QxeGPva2",
+                              "fields": {
+                                "OP": "-"
+                              },
+                              "inputs": {
+                                "A": {
+                                  "block": {
+                                    "type": "var_get",
+                                    "id": "b_hYKYcwIB",
+                                    "fields": {
+                                      "VAR": {
+                                        "id": "var_xkxwnQrS"
+                                      }
+                                    }
+                                  }
+                                },
+                                "B": {
+                                  "block": {
+                                    "type": "arith_float",
+                                    "id": "b_gSXt2RMZ",
+                                    "fields": {
+                                      "OP": "*"
+                                    },
+                                    "inputs": {
+                                      "A": {
+                                        "block": {
+                                          "type": "input_getaxis",
+                                          "id": "b_tKR69yz8",
+                                          "fields": {
+                                            "AXIS": "Mouse Y"
+                                          }
+                                        }
+                                      },
+                                      "B": {
+                                        "block": {
+                                          "type": "var_get",
+                                          "id": "b_TmeLS1Op",
+                                          "fields": {
+                                            "VAR": {
+                                              "id": "var_Ih7yfJs1"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "var_set",
+                            "id": "b_CpWDKNQy",
+                            "fields": {
+                              "VAR": {
+                                "id": "var_xkxwnQrS"
+                              }
+                            },
+                            "inputs": {
+                              "VALUE": {
+                                "block": {
+                                  "type": "mathf_clamp",
+                                  "id": "b_u2p17fr4",
+                                  "inputs": {
+                                    "X": {
+                                      "block": {
+                                        "type": "var_get",
+                                        "id": "b_51DTjBlU",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "var_xkxwnQrS"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "MIN": {
+                                      "block": {
+                                        "type": "var_get",
+                                        "id": "b_H9PrNZ6I",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "var_ON43xKmT"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "MAX": {
+                                      "block": {
+                                        "type": "var_get",
+                                        "id": "b_XEDB0ULr",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "var_ecQoXsf2"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "tr_set_leuler",
+                                "id": "b_sozSptQL",
+                                "inputs": {
+                                  "TR": {
+                                    "block": {
+                                      "type": "var_get",
+                                      "id": "b_EPTFCYbf",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "var_o3gyrDO1"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "E": {
+                                    "block": {
+                                      "type": "make_vector3",
+                                      "id": "b_pUAFJWpS",
+                                      "inputs": {
+                                        "X": {
+                                          "block": {
+                                            "type": "var_get",
+                                            "id": "b_vbF2ulFn",
+                                            "fields": {
+                                              "VAR": {
+                                                "id": "var_xkxwnQrS"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "Y": {
+                                          "block": {
+                                            "type": "const_float",
+                                            "id": "b_wZqvr4MS",
+                                            "fields": {
+                                              "N": 0
+                                            }
+                                          }
+                                        },
+                                        "Z": {
+                                          "block": {
+                                            "type": "const_float",
+                                            "id": "b_4rJaH8mf",
+                                            "fields": {
+                                              "N": 0
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "variables": [
+      {
+        "name": "rb",
+        "id": "var_OhbVrpoi",
+        "type": "Rigidbody"
+      },
+      {
+        "name": "bulletRb",
+        "id": "var_VgRV5IfL",
+        "type": "Rigidbody"
+      },
+      {
+        "name": "player",
+        "id": "var_BcbfnoGM",
+        "type": "GameObject"
+      },
+      {
+        "name": "bulletPrefab",
+        "id": "var_bJmTPSIA",
+        "type": "GameObject"
+      },
+      {
+        "name": "bullet",
+        "id": "var_oCLrZ3aW",
+        "type": "GameObject"
+      },
+      {
+        "name": "moveSpeed",
+        "id": "var_ZkSBvrjn",
+        "type": "float"
+      },
+      {
+        "name": "jumpSpeed",
+        "id": "var_9Wvgfygw",
+        "type": "float"
+      },
+      {
+        "name": "isGround",
+        "id": "var_2wMqZcUD",
+        "type": "bool"
+      },
+      {
+        "name": "mouseSensitivity",
+        "id": "var_Ih7yfJs1",
+        "type": "float"
+      },
+      {
+        "name": "minPitch",
+        "id": "var_ON43xKmT",
+        "type": "float"
+      },
+      {
+        "name": "maxPitch",
+        "id": "var_ecQoXsf2",
+        "type": "float"
+      },
+      {
+        "name": "cameraPitchPivot",
+        "id": "var_o3gyrDO1",
+        "type": "Transform"
+      },
+      {
+        "name": "pitch",
+        "id": "var_xkxwnQrS",
+        "type": "float"
+      },
+      {
+        "name": "yaw",
+        "id": "var_7RPeMOkI",
+        "type": "float"
+      }
+    ]
+  }
+}
